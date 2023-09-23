@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaymentController {
 	
 	@Autowired
-    PaymentServiceImpl paymentService;
+    PaymentServiceImpl paymentService=new PaymentServiceImpl();
 
     @PostMapping("/pay")
     public Payment pay(@RequestParam Integer reservationId, @RequestParam Integer amountSent, @RequestParam String mode) throws Exception{
