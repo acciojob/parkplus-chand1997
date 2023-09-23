@@ -33,6 +33,10 @@ public class Spot {
         this.occupied = occupied;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
