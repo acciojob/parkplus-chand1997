@@ -10,8 +10,10 @@ public class ParkingLot {
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
 
+    @Column(nullable = false)
     String name;
 
+    @Column(nullable = false)
     String address;
 
     @OneToMany(mappedBy = "parkingLot",cascade = CascadeType.ALL)
