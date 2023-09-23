@@ -26,7 +26,7 @@ public class Payment {
     }
 
 
-    public Boolean getPaymentCompleted() {
+    public Boolean isPaymentCompleted() {
         return paymentCompleted;
     }
 
