@@ -24,7 +24,7 @@ public class ReservationServiceImpl implements ReservationService {
     ParkingLotRepository parkingLotRepository3;
     @Override
     public Reservation reserveSpot(Integer userId, Integer parkingLotId, Integer timeInHours,
-                                   Integer numberOfWheels) throws Exception {
+                                   Integer numberOfWheels) {
 
        Optional<User>  optionalUser=userRepository3.findById(userId);
        if(!optionalUser.isPresent()) throw new CannotMakeReservationException("Invalid userId");

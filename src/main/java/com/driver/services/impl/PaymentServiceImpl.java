@@ -22,7 +22,7 @@ public class PaymentServiceImpl implements PaymentService {
     PaymentRepository paymentRepository2;
 
     @Override
-    public Payment pay(Integer reservationId, int amountSent, String mode) throws Exception {
+    public Payment pay(Integer reservationId, int amountSent, String mode) {
        Optional<Reservation> optionalReservation=reservationRepository2.findById(reservationId);
        if(!optionalReservation.isPresent()) throw new ReservationNotFoundException("invalid reservationId");
 
