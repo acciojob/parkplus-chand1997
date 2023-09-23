@@ -27,10 +27,10 @@ public class ReservationServiceImpl implements ReservationService {
                                    Integer numberOfWheels) {
 
        Optional<User>  optionalUser=userRepository3.findById(userId);
-       if(!optionalUser.isPresent()) throw new CannotMakeReservationException("Invalid userId");
+       if(!optionalUser.isPresent()) throw new CannotMakeReservationException("Cannot make reservation");
 
       Optional<ParkingLot> optionalParkingLot=parkingLotRepository3.findById(parkingLotId);
-      if(!optionalParkingLot.isPresent()) throw new CannotMakeReservationException("Invalid parkingLot Id");
+      if(!optionalParkingLot.isPresent()) throw new CannotMakeReservationException("Cannot make reservation");
 
           Spot spot=null;
         if(numberOfWheels<=2) {
@@ -44,7 +44,7 @@ public class ReservationServiceImpl implements ReservationService {
              spot=spotRepository3.findSpotForAboveFourWheelers(parkingLotId,SpotType.OTHERS);
         }
 
-        if(spot==null) throw new CannotMakeReservationException("Spot not available");
+        if(spot==null) throw new CannotMakeReservationException("Cannot make reservation");
 
 
         User user=optionalUser.get();
