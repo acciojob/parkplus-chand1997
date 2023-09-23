@@ -34,7 +34,7 @@ public class ParkingLotController {
             return new ResponseEntity<>(newSpot, HttpStatus.CREATED);
 
         }catch(Exception e){
-            return null;
+            return new ResponseEntity<>(new Spot(), HttpStatus.CREATED);
         }
 
     }
@@ -58,7 +58,7 @@ public class ParkingLotController {
             Spot  updatedSpot=parkingLotService.updateSpot(parkingLotId,spotId,pricePerHour);
             return new ResponseEntity<>(updatedSpot, HttpStatus.OK);
         }catch(Exception e){
-            return null;
+            return new ResponseEntity<>(new Spot(), HttpStatus.OK);
         }
 
     }
